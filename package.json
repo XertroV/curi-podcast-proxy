@@ -1,0 +1,26 @@
+{
+  "name": "curi-podcast-proxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "_dist/proxy.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "xhr2": "^0.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XertroV/curi-podcast-proxy.git"
+  },
+  "author": "Max Kaye",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/XertroV/curi-podcast-proxy/issues"
+  },
+  "homepage": "https://github.com/XertroV/curi-podcast-proxy#readme"
+}
