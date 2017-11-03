@@ -29,7 +29,7 @@ serve :: forall eff. Aff (console :: CONSOLE, http :: HTTP, process :: PROCESS, 
 serve = do 
     portM <- liftEff' $ getPort
     port <- maybe (throwError $ error "Unable to get PORT env var") (\p -> pure p) portM
-    let opts = {hostname: "localhost", port: port, backlog: Nothing}
+    let opts = {hostname: "0.0.0.0", port: port, backlog: Nothing}
     liftEff $ quickServe opts proxy
         where
             proxy :: GET (console :: CONSOLE, process :: PROCESS, ajax :: AJAX | eff) String
