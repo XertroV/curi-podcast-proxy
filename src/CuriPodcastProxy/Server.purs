@@ -22,7 +22,6 @@ import QuickServe (GET, quickServe)
 getFeed :: forall eff. Aff (ajax :: AJAX, console :: CONSOLE | eff) (String)
 getFeed = do
     resp <- get podcastURL
-    log $ "Got back: " <> resp.response
     pure $ resp.response
 
 
@@ -35,7 +34,5 @@ serve = do
         where
             proxy :: GET (console :: CONSOLE, process :: PROCESS, ajax :: AJAX | eff) String
             proxy = do
-                liftAff $ log "Got request for feed"
                 content <- liftAff $ getFeed
-                liftAff $ log $ "Got feed: " <> content
                 pure content
